@@ -2,15 +2,18 @@ sudo: false
 dist: trusty
 language: node_js
 node_js:
-  - "4.1"
+- '4.1'
 cache:
   directories:
-    - node_modules
+  - node_modules
 install:
-  - npm install -g gitbook-cli
-  - npm install -g npm-registry-client
+- npm install -g gitbook-cli
+- npm install -g npm-registry-client
 script:
-  - make
+- make
 after_script:
 - test $TRAVIS_TEST_RESULT == "0" && test $TRAVIS_PULL_REQUEST == "false" && test
   $TRAVIS_BRANCH == "master" && make install
+notifications:
+  slack:
+    secure: TEUazGX4jEikqKu5+c7fwAyKOLqlt/L1lnkMz9OAJAlFoHSqNeuDI+GsEZk0ROcvX7yDCPqokBfGi397f2aXSuDkWbqqhjq8wvPuK7suKv2p1HV2Kvd/NJc9F2V80cM/2NkhCyr77Cghp2qJFj5n0qng9d/aEBxT2ckFUOz2VTDrUI8Jc3IJ/GV/McN6nOjLRDTJNbEuMY6wNUJD9Nyn9q3egAJ3AQN38wZI6pffF3mHYKXfOIJXRKYmshlLRmaCwB/j5oKBZQmMidzC5uHy820R2VZNDcQ1iqsi0J1MOAR/gcb493f/gcj2ZdfoTPFO5p7x4wtteuD/sOY9/fdE75OgkPlBAwbIdORxP85L4WuGvLSRL87OzYMYedZ+NK0GeekqlBawtQKDEdbOpZ+0Po/b5AVvR1himoAGUH5mGpPQRR9VJxIo+/VdFdTeCF0SS1VsOvUtn+/ka0D5idpyXNNYRomeLrJieRIB5dyheThMAH3h/zYgnbch8rxjtqBYR18hD7iTksNCevaQD65bDNeAXwKBlEQwPIBVVaMY1924PwGRY4YOhY6iekQkwjiY/KsJoTEA+FHblAlhkPKWlPL0yx7UV2DXF2yx8du2rw7S5Eqc5feqnmEPLfYKxsH9LZacLISyzi0guDmfH/4Zumb32B75fiOb5LtK9yhjoXQ=
