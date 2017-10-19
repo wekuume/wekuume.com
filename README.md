@@ -1,2 +1,0 @@
-# wekuume.com
-wekuume website
